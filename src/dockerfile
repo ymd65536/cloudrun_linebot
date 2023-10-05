@@ -1,0 +1,9 @@
+FROM python:sha256@sha256:acfa89605d1da686df45736d1576ba138e1411aec3fd689e55ab50703ea151b9
+
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . .
+
+RUN pip install -r requirements.txt --no-cache-dir
+
+CMD ["exec", "gunicorn", "--bind", ":$PORT", "--workers", "1", "--threads", "8", "app:app"]
