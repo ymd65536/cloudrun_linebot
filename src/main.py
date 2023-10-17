@@ -27,7 +27,7 @@ parameters = {
 def hello_world():
 
     vertexai.init(location="us-central1")
-    model = TextGenerationModel.from_pretrained("text-bison@001")
+    model = TextGenerationModel.from_pretrained("text-bison")
     response = model.predict(
         "Who are you?",
         **parameters
