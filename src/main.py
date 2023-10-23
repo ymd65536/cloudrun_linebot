@@ -65,7 +65,7 @@ def handle_message(event):
             chat_model = ChatModel.from_pretrained("chat-bison@001")
 
             chat = chat_model.start_chat(
-                context="あなたは文章をきれいにまとめることができるアシスタントです。入力された要約してください。",
+                context="あなたは文章をきれいにまとめることができるアシスタントです。入力された文章を要約してください。",
                 examples=[
                     InputOutputTextPair(
                         input_text="Your name",
